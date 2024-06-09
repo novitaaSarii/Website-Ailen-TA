@@ -41,8 +41,6 @@
 
     <label for="nama" >Nama</label><br>
     <input type="text" id="nama" name="nama" value="Nama : "><br>
-    <label for="email">Email</label><br>
-    <input type="text" id="email" name="email" value="Email : "> <br>
     <label for="telepon">Telepon</label><br>
     <input type="text" id="telepon"  name="telepon" value="Telepon : "> <br>
   
@@ -60,10 +58,21 @@
     <label for="pos">Pos</label><br>
     <input type="text" id="pos" name="pos" value="Kode Pos : "> <br>
 
-    <label for="jenis">Jenis dan Jumlah Beli</label><br>
-    <input type="text" id="jenis"  name="jenis" value="Jenis dan Jumlah (gr) : "> <br>
+    <label for="jenis">Produk</label><br>
+    <input type="text" id="jenis" name="jenis" value="Produk : Rancabali "> <br>
+    <!-- <input id="jenis">Produk : Ciwidey </input>  <br> -->
 
-    <br>
+    <!-- <br> -->
+    <label for="jumlah">Jumlah</label><br>
+<select id="jumlah" name="jumlah" style="width: 200px; background-color: white;">
+  <option value="250gr">250gr</option>
+  <option value="500gr">500gr</option>
+  <option value="750gr">750gr</option>
+  <option value="1000gr">1000gr</option>
+</select>
+</br>
+
+   <br>
     <center>
       <button type="submit" class="button" >Kirim Data ke WhatsApp </button> 
     </center>
@@ -81,7 +90,7 @@
  
       // Get form values 
       const nama = document.getElementById('nama').value; 
-      const email = document.getElementById('email').value; 
+      
 
       const telepon = document.getElementById('telepon').value; 
       const provinsi = document.getElementById('provinsi').value; 
@@ -93,10 +102,11 @@
       const alamat = document.getElementById('alamat').value; 
       const pos = document.getElementById('pos').value; 
       const jenis = document.getElementById('jenis').value; 
+      const jumlah = document.getElementById('jumlah').value; 
  
       // Format data for WhatsApp URL 
       const formattedNama = encodeURIComponent(nama); 
-      const formattedEmail = encodeURIComponent(email); 
+      
 
       const formattedTelepon = encodeURIComponent(telepon); 
       const formattedProvinsi = encodeURIComponent(provinsi); 
@@ -110,10 +120,11 @@
       const formattedPos = encodeURIComponent(pos); 
 
       const formattedJenis = encodeURIComponent(jenis); 
+      const formattedJumlah = encodeURIComponent(jumlah); 
    
        
       // Build WhatsApp URL 
-      const whatsappUrl =  `https://wa.me/6281270304464?text=${formattedNama}%0A${formattedEmail}%0A${formattedTelepon}%0A${formattedProvinsi}%0A${formattedKecamatan}%0A${formattedKabupaten}%0A${formattedKelurahan}%0A${formattedAlamat}%0A${formattedPos}%0A${formattedJenis}`;  
+      const whatsappUrl =  `https://wa.me/6281270304464?text=${formattedNama}%0A${formattedTelepon}%0A${formattedProvinsi}%0A${formattedKecamatan}%0A${formattedKabupaten}%0A${formattedKelurahan}%0A${formattedAlamat}%0A${formattedPos}%0A${formattedJenis}%0A${formattedJumlah}`;  
 
       window.open(whatsappUrl); 
     }); 

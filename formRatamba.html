@@ -1,0 +1,133 @@
+<!DOCTYPE html> 
+<html> 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+  <title>Form to WhatsApp</title> 
+  <link rel="stylesheet" href="assets/css/style.css">
+</head> 
+<body> 
+  
+    <nav>
+        <div class="nav">
+            <img src="assets/image/hijauuu.svg" alt="">
+        </div>
+        
+        <div class="logo">
+            <p>
+                <img align="right" src="assets/image/logo ailen.svg" style="height: 70px; width: 70px;"  >
+            </p>
+        </div>
+
+        <div class="navbar">
+           
+            <br>
+                <br>
+                <br>
+                <a href="index.html" >Home</a> <a href="about.html" >About</a> <a href="product.html" >Product</a> <a href="faq.html" >FAQ</a> <a href="contact.html" >Contact</a> 
+            
+        </br>
+   
+            
+        </div>
+        <div >
+            <img src="assets/image/datanew.svg" alt="" style="margin-left: 540px;">
+        <br> <br> 
+        </div>
+
+<form class="myForm" id="myForm">
+
+    <label for="nama" >Nama</label><br>
+    <input type="text" id="nama" name="nama" value="Nama : "><br>
+    <label for="telepon">Telepon</label><br>
+    <input type="text" id="telepon"  name="telepon" value="Telepon : "> <br>
+  
+    <label for="provinsi">Provinsi</label><br>
+    <input type="text" id="provinsi" name="provinsi" value="Provinsi : "><br>
+    <label for="kabupaten">Kabupaten</label><br>
+    <input type="text" id="kabupaten" name="kabupaten" value="Kabupaten : "> <br>
+    <label for="kecamatan">Kecamatan</label><br>
+    <input type="text" id="kecamatan" name="kecamatan" value="Kecamatan : "> <br>
+    
+    <label for="kelurahan">Kelurahan</label><br>
+    <input type="text" id="kelurahan" name="kelurahan" value="Kelurahan : "><br>
+    <label for="alamat">Alamat</label><br>
+    <input type="text" id="alamat" name="alamat" value="Alamat : "> <br>
+    <label for="pos">Pos</label><br>
+    <input type="text" id="pos" name="pos" value="Kode Pos : "> <br>
+
+    <label for="jenis">Produk</label><br>
+    <input type="text" id="jenis" name="jenis" value="Produk : Ratamba "> <br>
+    <!-- <input id="jenis">Produk : Ciwidey </input>  <br> -->
+
+    <!-- <br> -->
+    <label for="jumlah">Jumlah</label><br>
+<select id="jumlah" name="jumlah" style="width: 200px; background-color: white;">
+  <option value="250gr">250gr</option>
+  <option value="500gr">500gr</option>
+  <option value="750gr">750gr</option>
+  <option value="1000gr">1000gr</option>
+</select>
+</br>
+
+   <br>
+    <center>
+      <button type="submit" class="button" >Kirim Data ke WhatsApp </button> 
+    </center>
+    
+  </br>
+  
+  
+</form> 
+
+  <script> 
+    const form = document.getElementById('myForm'); 
+ 
+    form.addEventListener('submit', function(event) { 
+      event.preventDefault(); // Prevent form submission 
+ 
+      // Get form values 
+      const nama = document.getElementById('nama').value; 
+      
+
+      const telepon = document.getElementById('telepon').value; 
+      const provinsi = document.getElementById('provinsi').value; 
+
+      const kabupaten = document.getElementById('kecamatan').value; 
+      const kecamatan = document.getElementById('kabupaten').value; 
+
+      const kelurahan = document.getElementById('kelurahan').value; 
+      const alamat = document.getElementById('alamat').value; 
+      const pos = document.getElementById('pos').value; 
+      const jenis = document.getElementById('jenis').value; 
+      const jumlah = document.getElementById('jumlah').value; 
+ 
+      // Format data for WhatsApp URL 
+      const formattedNama = encodeURIComponent(nama); 
+      
+
+      const formattedTelepon = encodeURIComponent(telepon); 
+      const formattedProvinsi = encodeURIComponent(provinsi); 
+
+      const formattedKabupaten = encodeURIComponent(kecamatan); 
+      const formattedKecamatan = encodeURIComponent(kabupaten); 
+
+      const formattedKelurahan = encodeURIComponent(kelurahan); 
+      const formattedAlamat = encodeURIComponent(alamat); 
+
+      const formattedPos = encodeURIComponent(pos); 
+
+      const formattedJenis = encodeURIComponent(jenis); 
+      const formattedJumlah = encodeURIComponent(jumlah); 
+   
+       
+      // Build WhatsApp URL 
+      const whatsappUrl =  `https://wa.me/6281270304464?text=${formattedNama}%0A${formattedTelepon}%0A${formattedProvinsi}%0A${formattedKecamatan}%0A${formattedKabupaten}%0A${formattedKelurahan}%0A${formattedAlamat}%0A${formattedPos}%0A${formattedJenis}%0A${formattedJumlah}`;  
+
+      window.open(whatsappUrl); 
+    }); 
+  </script> 
+</body> 
+</html> 

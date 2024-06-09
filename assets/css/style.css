@@ -10,8 +10,8 @@
     
 }
 
-/* .container{
-  width: auto;
+/* .nav{
+  width: 1040px;
 } */
 
 /* Style the navbar */
@@ -20,9 +20,13 @@
   margin-left: 570px;
 }
 
-/* .logo{
-  margin-right: 10px;
-} */
+.nav-click{
+  margin-left: 90px;
+}
+
+.logo{
+  margin-right: 30px;
+}
 
 .faq{
   border-radius: 20px;
@@ -39,8 +43,8 @@
   border-radius: 20px;
   margin: 20px;
   padding: 20px;
-  width: 850px;
-  margin-left: 280px;
+  width: 700px;
+  margin-left: 350px;
   margin-top: 20px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.8);
   border: 20px;
@@ -164,3 +168,11 @@ to {opacity: 1}
 
 #content{ background-color:#F3F3F3; margin:auto;width:70%;height:700px;}
 #footer{width:100%;background-color:#666666;height:200px;}
+
+/* .footer { 
+  position: absolute; 
+  bottom: 0; 
+  left: 0; 
+  z-index: 10;
+} */
+
